@@ -29,5 +29,13 @@ const monsterHealthText = document.querySelector("#monsterHealth");
 // functions for control 
 
 function goStore(){
-    
+    console.log("Going to store.")
+}
+
+function goCave(){
+    console.log("Going to cave.")
+}
+
+function fightDragon(){
+    console.log("fighting dragon.")
 }
