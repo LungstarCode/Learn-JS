@@ -32,6 +32,15 @@ function goStore(){
     button1.innerText = "Buy 10 health (10 gold)";
     button2.innerText = "Buy weapon (30 gold)";
     button3.innerText = "Go to town square";
+
+    // after the text is changed from the first click, reinitializing the buttons on click 
+
+    button1.omclick = buyHealth
+    button2.onclick = buyWeapon
+    button3.onclick = goTown
+
+    // change the text when the user enter the store 
+    text.innerText = "You enter the store."
 }
 
 function goCave(){
@@ -48,3 +57,25 @@ button1.onclick = goStore
 button2.onclick = goCave
 button3.onclick = fightDragon
 
+// adding the additional functions for buying weapons, goint to town square and buying health 
+
+function goTown(){
+    button1.innerText = "Go to store"
+    button2.innerText = "Go to cave"
+    button3.innerText = "Fight Dragon"
+
+    button1.onclick = goStore
+    button2.onclick = goCave
+    button3.onclick = fightDragon
+
+    text.innerText = "You are in the town square. you see a sign that says Store."
+
+
+}
+function buyHealth(){
+
+}
+
+function buyWeapon(){
+
+}
