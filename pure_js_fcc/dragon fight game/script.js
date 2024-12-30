@@ -27,7 +27,21 @@ const monsterHealthText = document.querySelector("#monsterHealth");
 
 
 // functions for control 
+/*
+function goTown(){
+    button1.innerText = "Go to store"
+    button2.innerText = "Go to cave"
+    button3.innerText = "Fight Dragon"
 
+    button1.onclick = goStore
+    button2.onclick = goCave
+    button3.onclick = fightDragon
+
+    text.innerText = "You are in the town square. you see a sign that says Store."
+
+}*/
+
+/*
 function goStore(){
     button1.innerText = "Buy 10 health (10 gold)";
     button2.innerText = "Buy weapon (30 gold)";
@@ -41,7 +55,7 @@ function goStore(){
 
     // change the text when the user enter the store 
     text.innerText = "You enter the store."
-}
+}*/
 
 function goCave(){
     console.log("Going to cave.")
@@ -59,7 +73,46 @@ button3.onclick = fightDragon
 
 // adding the additional functions for buying weapons, goint to town square and buying health 
 
+
+function buyHealth(){
+
+}
+
+function buyWeapon(){
+
+}
+
 function goTown(){
+
+}
+
+function goStore(){
+
+}
+
+
+// go town and go store have redundancy code... hahaha, the spagheti code!, lets fix that 
+
+const locations = [
+    {
+        name : "town square",
+        "button text": ["Go to store", "Go to cave", "Fight Dragon"],
+        "button functions": [goStore, goCave, fightDragon],
+        text : "You are in the town square. you see a sign that says Store.", 
+
+    }, 
+
+    {
+        name: "store",
+        "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Goo to town square"],
+        "button functions": [buyHealth, buyWeapon, goTown],
+        text: "You enter the store"
+    }
+]
+
+// create a function to update the locations
+
+function update(location){
     button1.innerText = "Go to store"
     button2.innerText = "Go to cave"
     button3.innerText = "Fight Dragon"
@@ -69,13 +122,4 @@ function goTown(){
     button3.onclick = fightDragon
 
     text.innerText = "You are in the town square. you see a sign that says Store."
-
-
-}
-function buyHealth(){
-
-}
-
-function buyWeapon(){
-
 }
