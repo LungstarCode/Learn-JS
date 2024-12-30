@@ -22,4 +22,21 @@ const darkColorsArr = [
   }
   getRandomIndex();
 
-  const body = document.querySelector("body");
+const body = document.querySelector("body");
+const bgHexCodeSpanElement = document.querySelector("#bg-hex-code");
+
+console.log(bgHexCodeSpanElement);
+
+function changeBackgroundColor() {
+    const color = darkColorsArr[getRandomIndex()];
+  
+    bgHexCodeSpanElement.innerText = color;
+    body.style.backgroundColor = color;
+  }
+  changeBackgroundColor();
+
+const btn = document.querySelector("#btn");
+console.log(btn);
+
+
+btn.onclick = changeBackgroundColor;
