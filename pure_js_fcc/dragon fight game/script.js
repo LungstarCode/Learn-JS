@@ -2,7 +2,7 @@
 // craeting some variables for the game, must use let so they can be latter changed
 
 let xp = 0;
-let gold = 0;
+let gold = 50;
 let health = 100;
 let currenWeaponIndex = 0;
 let fighting;
@@ -24,6 +24,24 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
+const weapons = [
+    {
+        name: "stick", 
+        power: 5
+    }, 
+    {
+        name: "dagger", 
+        power: 30
+    }, 
+    {
+        name: "clwa hammer", 
+        power: 50
+    }, 
+    {
+        name: "sword", 
+        power: 100
+    }
+]
 
 
 // functions for control 
@@ -75,6 +93,15 @@ button3.onclick = fightDragon
 
 
 function buyHealth(){
+    if (gold >= 10) {
+        gold -= 10;
+        health += 10;
+
+        goldText.innerText = gold;
+        healthText.innerText = health;
+    }else {
+       text.innerText = "You do not have enough gold to buy health."
+    }
 
 }
 
