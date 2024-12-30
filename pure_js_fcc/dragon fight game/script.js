@@ -42,6 +42,26 @@ const weapons = [
         power: 100
     }
 ]
+// defining the monsters to fight and their levels and health
+const monsters = [
+    {
+        name: "slime",
+        level : 2,
+        health: 15
+    }, 
+
+    {
+        name: "fanged beast",
+        level : 8,
+        health: 60
+    }, 
+
+    {
+        name: "dragon",
+        level : 20,
+        health: 300
+    }
+]
 
 
 // functions for control 
@@ -106,6 +126,23 @@ function buyHealth(){
 }
 
 function buyWeapon(){
+    if (currenWeaponIndex < weapons.length){
+        if (gold >= 30){
+            gold -= 30;
+            currenWeaponIndex++;
+            goldText.innerText = gold;
+            let newWeapon = weapons[currenWeaponIndex];
+            text.innerText = "You now have a " + newWeapon +".";
+            inventory.push(newWeapon);
+            text.innerText += " In your inventory you have: "+ inventory;
+        } else {
+            text.innerText = "You do not have enough gold to buy a weapon.";
+        }
+    } else {
+        text.innerText = "You already have the most powerful weapon!";
+        button2.innerText = "Sell weapon for 15 gold";
+        button2.onclick = sellWeapon;   /// To be created!
+    }
 
 }
 
@@ -169,4 +206,16 @@ function update(location){
     button3.onclick = location["button functions"][2]
 
     text.innerText = location.text
+}
+
+
+function sellWeapon(){
+    if (inventory.length > 1){
+        gold += 15;
+        goldText.innerText = gold;
+        let currenWeapon = inventory.shift();
+        text.innerText = "You sold the "+ currenWeapon + ".";
+        text,innerText += " In your inventory you have: "+ inventory;
+        
+    }
 }
