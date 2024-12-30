@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            body {
+            background-color: white;
+            }
+    </style>
+</head>
+<body>
+    <button id="btn">Change background</button>
+</body>
+<script>
+    const btn = document.querySelector("#btn");
+    const body = document.querySelector("body");
+
+    function dark(){
+        body.style.backgroundColor = "black";
+    }
+
+    function changeBackground(){
+        btn.onclick = dark;
+    }
+    changeBackground();
+</script>
+
+</html>
