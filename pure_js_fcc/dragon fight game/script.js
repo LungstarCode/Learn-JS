@@ -64,6 +64,7 @@ const monsters = [
 ]
 
 
+
 // functions for control 
 /*
 function goTown(){
@@ -99,8 +100,22 @@ function goCave(){
     update(locations[2])
 }
 
+
+// FUNCTIONS TO FIGHT
+
 function fightDragon(){
-    console.log("fighting dragon.")
+    fighting = 2;
+    goFight();
+}
+
+function fightBeast(){
+    fighting = 1;
+    goFight();
+}
+
+function fightSlime(){
+    fighting = 0;
+    goFight();
 }
 
 
@@ -158,15 +173,6 @@ function goStore(){
 
 }
 
-// functions for inside the cave 
-function fightSlime(){
-
-}
-
-function fightBeast(){
-
-}
-
 
 // go town and go store have redundancy code... hahaha, the spagheti code!, lets fix that 
 
@@ -191,7 +197,14 @@ const locations = [
         "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
         "button functions": [fightSlime. fightBeast, goTown],
         text: "You enter the cave. You see some monsters."
-    }
+    }, 
+
+    {
+        name: "fight",
+        "button text": ["Attack", "Dodge", "Run"],
+        "button functions": [attack, dodge, goTown],
+        text: "You are fighting a monster."
+      }
 ]
 
 // create a function to update the locations
@@ -218,4 +231,40 @@ function sellWeapon(){
         text,innerText += " In your inventory you have: "+ inventory;
         
     }
+}
+
+
+
+// Safety Functions 
+function attack(){
+        text.innerText = "The " + monsters[fighting].name + " attacks.";
+        text.innerText += "You attack it with "+ weapons[currenWeaponIndex].name + ".";
+
+        health -= monsters[fighting].level 
+        monsterHealth -= weapons[currentWeaponIndex].power + Math.floor(Math.random() * xp) + 1;
+
+        healthText.innerText = health;
+        monsterHealthText.innerText = monsterHealth;
+        // incase the user loses or the monster dies 
+        if (health <= 0) {
+            lose();
+          }else if (monsterHealth <= 0){
+              defeatMonster()
+          }
+
+}
+
+function dodge(){
+
+}
+
+
+// action functions 
+
+function goFight(){
+    update(locations[3]);
+    monsterHealth = monsters[fighting].health;
+    monsterStats.style.display = "block";
+    monsterName.innerText = monsters[fighting].name;
+    monsterHealthText.innerText= monsterHealth ;
 }
