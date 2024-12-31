@@ -62,6 +62,6 @@ This project is an excellent demonstration of interactive game design, problem-s
 
 ## Project 2 Overview
 
-<img src="" alt ="project 2 image"/>
+<img src="https://github.com/LungstarCode/Learn-JS/blob/master/project-images/Screenshot%20(15).png" alt ="project 2 image"/>
 
 
