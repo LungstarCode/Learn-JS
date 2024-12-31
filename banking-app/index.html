@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Banking App</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div id="login-container" class="form-container">
+                <h2>Login</h2>
+                <input type="text" id="login-card" placeholder="Card Number">
+                <input type="password" id="login-pin" placeholder="PIN">
+                <button onclick="login()">Login</button>
+            </div>
+
+            <div id="dashboard" class="hidden">
+                <h2>Welcome, <span id="user-name"></span></h2>
+                <div class="card-details">
+                    <p>Card Number: <span id="user-card"></span></p>
+                    <p>Balance: $<span id="user-balance">0</span></p>
+                </div>
+                <input type="number" id="transaction-amount" placeholder="Amount">
+                <button onclick="deposit()">Deposit</button>
+                <button onclick="withdraw()">Withdraw</button>
+                <button onclick="loan()">Take Loan</button>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Banking App &copy; 2024</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
