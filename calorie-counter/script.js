@@ -33,5 +33,6 @@ function cleanInputString(str){
 // In HTML, number inputs allow for exponential notation (such as 1e10). You need to filter those out.
   // flag i means insensitive and used to flag any case , eg.  hello , Hello , HELLO , even HeLlo
 function isInvalidInput(str){
-    const regex = /e/i;
+    const regex = /\d+e\d+/i;
 }
+
