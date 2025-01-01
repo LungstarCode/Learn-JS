@@ -58,3 +58,10 @@ These stats are displayed and updated dynamically as the game progresses.
 - Engaging gameplay mechanics with resource management and decision-making.
 
 This project is an excellent demonstration of interactive game design, problem-solving, and JavaScript programming.
+
+
+## Project 2 Overview
+
+<img src="https://github.com/LungstarCode/Learn-JS/blob/master/project-images/Screenshot%20(15).png" alt ="project 2 image"/>
+
+
